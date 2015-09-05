@@ -1,0 +1,87 @@
+{% load staticfiles %}
+<html>
+  <head>
+    <link href='https://fonts.googleapis.com/css?family=Oswald:300' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Bree+Serif' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Handlee' rel='stylesheet' type='text/css'>
+    <link href="{% static 'bootstrap/css/bootstrap.min.css' %}"
+          rel="stylesheet" media="screen">
+    <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+  </head>
+
+<div class="navbar-fixed-top c_jumbotron container-fluid">
+  <div style="width:80%" class="container">
+    <div class="row">
+
+      <div class="col-md-4">
+        <img src="{% static 'res/logo.png' %}"> </img>
+        <a href="home">
+          <button style="margin-left:10px" type="button" class="btn btn-light-blue">Home</button>
+        </a>
+        <button type="button" class="btn btn-light-blue">Feedback</button>
+      </div>
+
+      <div class="col-md-4">
+      </div>
+
+      <div class="col-md-4">
+        <form style="margin:0px 0px" class="form-inline">
+            <input style="" type="search" class="form-control" id="InputSearch" placeholder="Search">
+            <button type="submit" class="btn btn-light-blue">Search</button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<body style="background-color:#EfF7Ff" class="handlee">
+  <div style="width:85%;padding-top:80px" class="container">
+
+    <div class="row a_c">
+
+      <div class="col-sm-3">
+          <img src="{% static 'res/bg_2.jpg' %}" class="img-responsive"> </img>
+
+        <div class="container-fluide well well_c font_bree border">
+          <div class="row">
+
+            <div class="col-sm-4">
+              <img src="{% static 'res/photo_ariel.png' %}" class="img-responsive img-circle border"/>        
+            </div>
+
+            <div style="padding-top:20" class="col-sm-7">
+                {{ author.name }}
+                {{ author.email}} 
+            </div>
+
+           </div>
+
+          <div class="row margin">
+           {{ author.descritpion }} 
+          </div>
+
+        </div>
+      </div>
+      
+      <div class="col-sm-6">
+         {% block content %}
+         {% endblock %}
+      </div>
+
+      <div class="col-sm-3">
+        <div class="container-fluide well well_c border">
+
+
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</body>
+
+
+</html>

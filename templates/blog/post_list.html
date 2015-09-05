@@ -1,0 +1,16 @@
+{% extends "blog/base.html" %}
+
+{% block content %}
+<div>
+   <h1><a href="/">Django Girls Blog</a></h1>
+</div>
+
+  {% for post in posts %}
+  <div>
+    <p>published: {{ post.date }}</p>
+    <h1><a href="">{{ post.title }}</a></h1>
+    <p>{{ post.body|linebreaks }}</p>
+  </div>
+  {% endfor %}
+
+{% endblock %}
