@@ -12,8 +12,6 @@ def home(request):
   return render(request, 'blog/home.html', {'author': author, 'posts': posts})
 
 def post(request):
-  print "reuqest in post"
-  print request.path[1::]
   post = Post.objects.get(url=request.path[1::])
   author= Author.objects.get()
   return render(request, 'blog/post.html', {'post': post, 'author': author})
